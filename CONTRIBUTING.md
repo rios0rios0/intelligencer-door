@@ -1,18 +1,24 @@
 # Contributing
 
-Contributions are welcome. By participating, you agree to maintain a respectful and constructive environment.
+> **This project was discontinued in December 2013 and is no longer actively maintained.**
+> The repository is preserved as a historical reference. No new features or bug fixes are planned.
 
-For coding standards, testing patterns, architecture guidelines, commit conventions, and all
-development practices, refer to the **[Development Guide](https://github.com/rios0rios0/guide/wiki)**.
+## Historical Build Information
 
-## Prerequisites
+This project was built using the following tools and technologies:
 
-- A text editor or IDE
+- **Language:** Object Pascal (Borland Delphi 7)
+- **IDE:** Borland Delphi 7
+- **Networking:** `TServerSocket` (ScktComp), WinSock
+- **UI Framework:** VCL (`TForm`, `TListView`, `TMainMenu`, `TPopupMenu`, `TStatusBar`, `TProgressBar`)
+- **Third-party components:** `TMSNPopUp`, `TTrayIcon`, `TXPManifest`
+- **Architecture:** Client-server (TCP sockets) with a server builder that patches embedded resources
 
-## Development Workflow
+### Build Steps (Historical)
 
-1. Fork and clone the repository
-2. Create a branch: `git checkout -b feat/my-change`
-3. Make your changes
-4. Commit following the [commit conventions](https://github.com/rios0rios0/guide/wiki/Life-Cycle/Git-Flow)
-5. Open a pull request against `main`
+1. Install Borland Delphi 7 with socket and third-party component packages (`TMSNPopUp`, `TTrayIcon`)
+2. Open `ID.dpr` in the Delphi IDE
+3. Ensure all unit paths are configured (especially `Servidor/External Uses/` and `Servidor/System/`)
+4. Compile and run
+
+> **Note:** The server-side code is in the `Servidor/` directory with its own entry point `IDS.dpr`. `Clear.bat` cleans Delphi build artifacts.
