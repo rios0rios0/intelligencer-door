@@ -20,6 +20,8 @@ Exceptions are acceptable depending on the circumstances (critical bug fixes tha
 
 ### Changed
 
+- refreshed `.github/copilot-instructions.md` to include `CHANGELOG.md` in the repository structure and document changelog entries in the development workflow
+
 ### Removed
 
 

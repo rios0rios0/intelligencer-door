@@ -45,6 +45,7 @@ intelligencer-door/
 │   ├── ICON01..ICON10.ico        # Selectable icons for the server builder
 │   ├── AppIcon.ico               # Application icon
 │   └── PopUp.png                 # MSN-style notification popup image
+├── CHANGELOG.md                  # Changelog following Keep a Changelog format
 ├── Clear.bat                     # Removes Delphi build artifacts (*.dcu, *.obj, etc.)
 ├── CONTRIBUTING.md
 ├── LICENSE                       # GNU General Public License v3.0
@@ -134,8 +135,9 @@ This project has **no automated tests, no linters, and no CI/CD pipeline**. Ther
 Because this project is archived and no longer maintained, there is no active development workflow. If making historical corrections or documentation updates:
 
 1. Edit the relevant `.pas`, `.dfm`, or documentation files.
-2. Open the project in Delphi 7 / RAD Studio to verify compilation if source changes are made.
-3. Submit a pull request with a clear description of the archival correction.
+2. Add an entry to `CHANGELOG.md` under the `[Unreleased]` section.
+3. Open the project in Delphi 7 / RAD Studio to verify compilation if source changes are made.
+4. Submit a pull request with a clear description of the archival correction.
 
 ## Coding Conventions
 
