@@ -13,7 +13,9 @@ The application acts as the **controller (client) side** of a TCP client-server 
 ```
 intelligencer-door/
 ├── .github/
-│   └── copilot-instructions.md   # This file
+│   ├── copilot-instructions.md   # This file
+│   └── workflows/
+│       └── release.yaml          # Reusable release workflow triggered on push to main
 ├── ID.dpr                        # Delphi project file – entry point; creates mutex, Form1
 ├── ID.res                        # Compiled application resources
 ├── UID.pas / UID.dfm             # Main form – connection list, server socket, tray icon,
@@ -128,7 +130,7 @@ There is no automated build system. Compilation requires a Windows machine with 
 
 ## Tests and Linting
 
-This project has **no automated tests, no linters, and no CI/CD pipeline**. There is no GitHub Actions configuration. The project is a preserved historical archive and no testing infrastructure exists or is planned.
+This project has **no automated tests and no linters**. A GitHub Actions workflow (`release.yaml`) automates release tagging on push to `main` via a reusable pipeline. No testing infrastructure exists or is planned.
 
 ## Development Workflow
 
