@@ -16,6 +16,8 @@ Exceptions are acceptable depending on the circumstances (critical bug fixes tha
 
 ## [Unreleased]
 
+## [0.1.3] - 2026-06-01
+
 ### Changed
 
 - refreshed `.github/copilot-instructions.md` to correct the form class names in the architecture section to match the actual code (`TFrm33585IDPrincipal`, `TFrmExplorer`, `TFrmKeyLogger`, `TFrmScreenLogger`, `TFrmDiagnostico`, `TFrmCriarServer`)
