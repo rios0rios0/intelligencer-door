@@ -78,23 +78,23 @@ The system consists of two independent programs compiled separately:
 
 ### Controller (Client) Architecture
 
-The main form `TForm1` (`UID.pas`) owns a `TServerSocket`. When a target connects, its socket handle, hostname, IP address, and connection time are added to a `TListView`. A right-click context menu dispatches remote commands by sending command strings through the target's `TCustomWinSocket`.
+The main form `TFrm33585IDPrincipal` (`UID.pas`) owns a `TServerSocket`. When a target connects, its socket handle, hostname, IP address, and connection time are added to a `TListView`. A right-click context menu dispatches remote commands by sending command strings through the target's `TCustomWinSocket`.
 
 Feature-specific forms (`UFM`, `UKL`, `USL`, `UDG`) are shown modally or as child windows and communicate with the target through the same socket reference.
 
 ```
-TForm1 (UID.pas)
+TFrm33585IDPrincipal (UID.pas)
 ├── TServerSocket  ──► accepts connections, populates TListView
 ├── TTrayIcon      ──► minimise-to-tray with MSN-style popup on new connection
 ├── Right-click popup menu
-│   ├── File Manager  → TFormFM (UFM.pas)  ──► command prefix "Rk06:"
-│   ├── Key Logger    → TFormKL (UKL.pas)
-│   ├── Screen Logger → TFormSL (USL.pas)
-│   ├── Diagnostics   → TFormDG (UDG.pas)
+│   ├── File Manager  → TFrmExplorer (UFM.pas)  ──► command prefix "Rk06:"
+│   ├── Key Logger    → TFrmKeyLogger (UKL.pas)
+│   ├── Screen Logger → TFrmScreenLogger (USL.pas)
+│   ├── Diagnostics   → TFrmDiagnostico (UDG.pas)
 │   ├── CMD Remoto    ──► "CMD:" prefix
 │   └── Hardware/Software toggles ──► plain-text command strings
 └── Menu bar
-    └── Criar Servidor → TFormCS (UCS.pas) – server builder
+    └── Criar Servidor → TFrmCriarServer (UCS.pas) – server builder
 ```
 
 ### Server Builder (`UCS.pas`)
