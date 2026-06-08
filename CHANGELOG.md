@@ -16,6 +16,10 @@ Exceptions are acceptable depending on the circumstances (critical bug fixes tha
 
 ## [Unreleased]
 
+### Added
+
+- created `CLAUDE.md` to document the controller/agent split, the `Rk06:`/`CMD:` wire protocol, the binary-patching server builder, and the Delphi 7 build steps for Claude Code sessions
+
 ## [0.1.3] - 2026-06-03
 
 ### Changed
