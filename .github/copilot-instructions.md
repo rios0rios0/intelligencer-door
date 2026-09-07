@@ -137,7 +137,7 @@ This project has **no automated tests and no linters**. A GitHub Actions workflo
 Because this project is archived and no longer maintained, there is no active development workflow. If making historical corrections or documentation updates:
 
 1. Edit the relevant `.pas`, `.dfm`, or documentation files.
-2. Write a changelog fragment with `chlog new --kind <Kind> --body "..."` — `CHANGELOG.md` is generated from the fragments under `.changes/unreleased/` and is never edited by hand.
+2. Write a changelog fragment with `chlog new --kind <Kind> --body '...'` — `CHANGELOG.md` is generated from the fragments under `.changes/unreleased/` and is never edited by hand.
 3. Open the project in Delphi 7 / RAD Studio to verify compilation if source changes are made.
 4. Submit a pull request with a clear description of the archival correction.
 
@@ -182,13 +182,14 @@ being asked, before committing.
 
 - Do NOT edit CHANGELOG.md directly; it is generated from fragments.
 - Create the fragment with:
-  `chlog new --kind <Kind> --body "<imperative description>"`
+  `chlog new --kind <Kind> --body '<past-tense description>'`
+- Write an apostrophe inside the single-quoted body as `'\''`.
 - Valid kinds: Added, Changed, Deprecated, Removed, Fixed, Security
 - Choose the kind that best matches the change (e.g., new feature → Added,
   bug fix → Fixed, behavior change → Changed, removal → Removed, security fix → Security).
 - If the change is backward-INCOMPATIBLE with the public API (a breaking
   change), you MUST add the `--breaking` flag:
-  `chlog new --kind <Kind> --breaking --body "<description>"`.
+  `chlog new --kind <Kind> --breaking --body '<past-tense description>'`.
   This is the ONLY thing that triggers a major version bump — the kind alone
   never does (per SemVer, major = incompatible change). When unsure whether a
   change breaks compatibility, ask the user instead of guessing.
