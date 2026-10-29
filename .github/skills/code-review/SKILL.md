@@ -20,8 +20,9 @@ The canonical engineering standards live in the
 repo-tailored index into that guide plus the rules that only apply here. Precedence, highest
 first:
 
-1. This repository's `.github/copilot-instructions.md`, `CLAUDE.md`, and `CONTRIBUTING.md` —
-   they describe *this* codebase and its load-bearing invariants.
+1. This repository's `.github/copilot-instructions.md`, `AGENTS.md`, and `CONTRIBUTING.md` —
+   they describe *this* codebase and its load-bearing invariants. (`CLAUDE.md` is a one-line
+   import of `AGENTS.md`.)
 2. The **rios0rios0/guide** wiki — the shared standard.
 3. General language idiom.
 
@@ -108,7 +109,7 @@ hand.
 - Fragment bodies start with a lowercase verb in simple past tense, capitalise proper nouns
   (GitHub, Go, Docker), and wrap code identifiers and versions in backticks.
 - `README.md` is updated whenever usage, setup, configuration, or architecture changes;
-  `.github/copilot-instructions.md` and `CLAUDE.md` whenever the workflow, commands, or
+  `.github/copilot-instructions.md` and `AGENTS.md` whenever the workflow, commands, or
   structure changes. Documentation and code ship in one commit.
 
 ## Git Flow and pull-request hygiene
@@ -135,9 +136,10 @@ See [Security](https://github.com/rios0rios0/guide/wiki/Security).
   environment variables or a secret manager — never in source, tests, fixtures, or the
   changelog. A secret that reaches a commit must be rotated, not merely deleted.
 - **Never write a PEM header sentinel or a realistic key shape into a fixture**
-  (`ghp_…`, `sk-…`, `AKIA…`, `xoxb-…`, JWT-shaped strings, or the dashed `BEGIN …` banners).
-  Gitleaks matches the shape, not the value, so a placeholder that merely *looks* like a
-  credential fails the pipeline. Use inert placeholders such as `fixture-token-placeholder`.
+  (GitHub `ghp_` prefixes, OpenAI `sk-` prefixes, AWS `AKIA` prefixes, Slack `xoxb`
+  prefixes, JWT-shaped strings, or the dashed `BEGIN …` banners). Gitleaks matches
+  the shape, not the value, so a placeholder that merely *looks* like a credential
+  fails the pipeline. Use inert placeholders such as `fixture-token-placeholder`.
 - **Suppressions must be justified.** Entries in `.gitleaksignore`, `.trivyignore`,
   `.semgrepignore`, or `.codeql-false-positives` need a fingerprint, a dated comment, and a
   reason. A suppression added to silence a real finding is a Critical.
@@ -173,7 +175,7 @@ A review that raises noise gets ignored. Do not report these:
 ### Change-control checklist
 - [ ] Changelog entry present for every behavioural change
 - [ ] `README.md` updated if usage, setup, or architecture changed
-- [ ] `.github/copilot-instructions.md` and `CLAUDE.md` updated if the workflow, commands, or structure changed
+- [ ] `.github/copilot-instructions.md` and `AGENTS.md` updated if the workflow, commands, or structure changed
 - [ ] Commit messages follow `type(SCOPE): message` in simple past tense
 - [ ] Breaking changes flagged in the commit footer, the changelog, and the PR description
 
