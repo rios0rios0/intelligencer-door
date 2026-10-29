@@ -12,10 +12,17 @@ The application acts as the **controller (client) side** of a TCP client-server 
 
 ```
 intelligencer-door/
+├── AGENTS.md                     # Shared agent guidance (CLAUDE.md imports this)
+├── CLAUDE.md                     # Claude Code entry point — imports AGENTS.md
 ├── .github/
 │   ├── copilot-instructions.md   # This file
+│   ├── skills/
+│   │   └── code-review/SKILL.md  # Repo-tailored code-review skill
 │   └── workflows/
-│       └── release.yaml          # Reusable release workflow triggered on push to main
+│       ├── checks.yaml           # Reusable PR quality-gate pipeline (runs chlog check)
+│       ├── release.yaml          # Reusable release workflow triggered on push to main
+│       ├── claude-review.yaml    # Automated Claude review on pull requests
+│       └── claude-mention.yaml   # Claude @-mention responder
 ├── ID.dpr                        # Delphi project file – entry point; creates mutex, Form1
 ├── ID.res                        # Compiled application resources
 ├── UID.pas / UID.dfm             # Main form – connection list, server socket, tray icon,
@@ -130,7 +137,7 @@ There is no automated build system. Compilation requires a Windows machine with 
 
 ## Tests and Linting
 
-This project has **no automated tests and no linters**. A GitHub Actions workflow (`release.yaml`) automates release tagging on push to `main` via a reusable pipeline. No testing infrastructure exists or is planned.
+This project has **no automated tests and no linters** for the Delphi code. GitHub Actions run reusable pipelines: `checks.yaml` is the pull-request quality gate (it runs `chlog check`, which fails the build when a changelog fragment is missing), and `release.yaml` tags releases on push to `main`. `claude-review.yaml` and `claude-mention.yaml` run Claude on pull requests and @-mentions. None of these build the Delphi code, and no Delphi test infrastructure exists or is planned.
 
 ## Development Workflow
 

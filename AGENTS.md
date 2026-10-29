@@ -1,6 +1,6 @@
-# CLAUDE.md
+# AGENTS.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to AI coding agents (Claude Code, Codex, Cursor, GitHub Copilot) when working with code in this repository.
 
 ## What this is
 
@@ -37,7 +37,7 @@ There is no build system, no tests, and no linters. Compilation requires Borland
 - Agent: open `Servidor/IDS.dpr`, compile separately.
 - Clean artifacts: run `Clear.bat`.
 
-CI: `.github/workflows/release.yaml` is a reusable release pipeline that tags on push to `main`. It does not build the Delphi code.
+CI: `.github/workflows/checks.yaml` runs a reusable pull-request quality gate (including `chlog check`), and `.github/workflows/release.yaml` is a reusable release pipeline that tags on push to `main`. Neither builds the Delphi code.
 
 ## Conventions and gotchas
 

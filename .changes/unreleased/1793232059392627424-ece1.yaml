@@ -1,0 +1,3 @@
+kind: 'Changed'
+body: 'refreshed `AGENTS.md`, `.github/copilot-instructions.md`, and `.github/skills/code-review/SKILL.md` to point at `AGENTS.md` instead of the `CLAUDE.md` import stub, list the `checks.yaml` and Claude workflows, and replace the secret-hygiene bullet with the non-matchable prefix wording'
+time: '2026-10-29T00:00:59.392558761Z'
