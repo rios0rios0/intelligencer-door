@@ -22,6 +22,12 @@ Exceptions are acceptable depending on the circumstances (critical bug fixes tha
 
 ## [Unreleased]
 
+## [0.5.2] - 2026-11-04
+
+### Changed
+
+- refreshed `AGENTS.md`, `.github/copilot-instructions.md`, and `.github/skills/code-review/SKILL.md` to point at `AGENTS.md` instead of the `CLAUDE.md` import stub, list the `checks.yaml` and Claude workflows, and replace the secret-hygiene bullet with the non-matchable prefix wording
+
 ## [0.5.1] - 2026-09-08
 
 ### Changed
